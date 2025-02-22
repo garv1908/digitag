@@ -1,3 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary-blue: #0466C8;
+  --deep-blue: #0353A4;
+  --dark-blue: #023E7D;
+  --navy-blue: #002855;
+  --dark-1: #001845;
+  --dark-2: #001233;
+  --gray-1: #33415C;
+  --gray-2: #5C677D;
+  --accent-1: #7D8597;
+  --accent-2: #979DAC;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#0466C8] text-white px-6 py-2 rounded-lg hover:bg-[#0353A4] transition-colors duration-200;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2 border border-[#7D8597] rounded-lg focus:outline-none focus:border-[#0466C8];
+  }
+}
