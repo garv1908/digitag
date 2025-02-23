@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ShoppingBag, Watch, BellRingIcon as RingIcon, Gem, Link, Shirt, Shovel as Shoe, Search, Wallet, UserCircle, Upload } from 'lucide-react';
-import img from '../../assets/bags/bag1.png'
-
+import { ShoppingBag, Watch, BellRingIcon as RingIcon, Gem, Link, Shirt, Shovel as Shoe, Search, Wallet, UserCircle, Upload, Briefcase, Gift, Footprints, Crown } from 'lucide-react';
+import img1 from '../../assets/bags/bag1.png'
+import img2 from '../../assets/bags/bag2.png' 
+import img3 from '../../assets/bags/bag3.png' 
+import img4 from '../../assets/bags/bag4.png' 
+import img5 from '../../assets/bags/bag5.png' 
+import img6 from '../../assets/bags/bag6.png' 
+import img7 from '../../assets/bags/bag7.png' 
+import img8 from '../../assets/bags/bag8.png' 
+import img9 from '../../assets/bags/bag9.png' 
 
 type Category = {
   id: string;
@@ -11,70 +18,62 @@ type Category = {
 };
 
 const categories: Category[] = [
-  { id: 'bags', name: 'Bags', icon: <ShoppingBag size={24} /> },
+  { id: 'bags', name: 'Bags', icon: <Briefcase size={24} /> },
   { id: 'watches', name: 'Watches', icon: <Watch size={24} /> },
-  { id: 'rings', name: 'Rings', icon: <RingIcon size={24} /> },
-  { id: 'necklaces', name: 'Necklaces', icon: <Link size={24} /> },
-  { id: 'bracelets', name: 'Bracelets', icon: <Gem size={24} /> },
-  { id: 'dresses', name: 'Dresses', icon: <Shirt size={24} /> },
-  { id: 'shoes', name: 'Shoes', icon: <Shoe size={24} /> }
+  { id: 'rings', name: 'Rings', icon: <Crown size={24} /> },
+  { id: 'gems', name: 'Gems', icon: <Gem size={24} /> },
+  { id: 'gifts', name: 'Gifts', icon: <Gift size={24} /> },
+  { id: 'shirts', name: 'Shirts', icon: <Shirt size={24} /> },
+  { id: 'shoes', name: 'Shoes', icon: <Footprints size={24} /> }
 ];
 
 const mockProducts = [
   {
     id: 1,
-    name: 'Leather Tote Bag',
+    name: 'ChicCarry Leather Tote',
     price: '0.5 ETH',
-    image: img
+    image: img1
   },
   {
     id: 2,
-    name: 'Gold Watch',
+    name: 'SleekSatchel Handbag',
     price: '1.2 ETH',
-    image: 'https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&q=80&w=400'
-  },
+    image: img2},
   {
     id: 3,
-    name: 'Leather Tote Bag',
-    price: '0.5 ETH',
-    image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&q=80&w=400'
-  },
+    name: 'Classic Elegance Clutch',
+    price: '1.0 ETH',
+    image: img3},
   {
     id: 4,
-    name: 'Leather Tote Bag',
-    price: '0.5 ETH',
-    image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&q=80&w=400'
-  },
+    name: 'Vintage Charm Crossbody',
+    price: '0.8 ETH',
+    image: img4}, 
   {
     id: 5,
-    name: 'Leather Tote Bag',
-    price: '0.5 ETH',
-    image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&q=80&w=400'
-  },
+    name: 'Artisan Craft Leather Sling',
+    price: '2.1 ETH',
+    image: img5},  
   {
     id: 6,
-    name: 'Leather Tote Bag',
-    price: '0.5 ETH',
-    image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&q=80&w=400'
-  },
+    name: 'Retro Revival Satchel',
+    price: '0.9 ETH',
+    image: img6},  
   {
     id: 7,
-    name: 'Leather Tote Bag',
-    price: '0.5 ETH',
-    image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&q=80&w=400'
-  },
+    name: 'Stylish Serenity Sling',
+    price: '1.3 ETH',
+    image: img7},
   {
     id: 8,
-    name: 'Leather Tote Bag',
-    price: '0.5 ETH',
-    image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&q=80&w=400'
-  },
+    name: 'Elegant Allure Tote',
+    price: '2.3 ETH',
+    image: img8},  
   {
     id: 9,
-    name: 'Diamond Ring',
-    price: '2.0 ETH',
-    image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=400'
-  }
+    name: 'Fusion Fashion Satchel',
+    price: '1.7 ETH',
+    image: img9},  
 ];
 
 function ItemDisplay() {
@@ -91,7 +90,7 @@ function ItemDisplay() {
           <div className="flex items-center space-x-3">
             <UserCircle size={40} className="text-primary" />
             <div>
-              <h3 className="font-medium">Abrar</h3>
+              <h3 className="font-medium">Abrar Ahmed</h3>
               <p className="text-sm text-gray-500">abc@gmail.com</p>
             </div>
           </div>
@@ -170,7 +169,7 @@ function ItemDisplay() {
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-48 object-cover"
+                className="w-full h-30 object-cover"
               />
               <div className="p-4">
                 <h3 className="font-medium">{product.name}</h3>

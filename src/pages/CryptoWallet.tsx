@@ -1,6 +1,8 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Wallet, ArrowLeft, RefreshCw, Send, Download } from 'lucide-react';
+import { Wallet, ArrowLeft, History, ArrowLeftRight, CreditCard } from 'lucide-react';
+import img1 from '../../assets/bags/bag1.png';
+import img2 from '../../assets/bags/bag2.png';
+import img3 from '../../assets/bags/bag3.png';
 
 function CryptoWallet() {
   const navigate = useNavigate();
@@ -21,74 +23,84 @@ function CryptoWallet() {
           <h1 className="text-3xl font-bold">YOUR CRYPTO WALLET</h1>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-gray-50 rounded-lg p-6">
-            <h2 className="text-xl font-semibold mb-4">Wallet Balance</h2>
-            <div className="flex items-center justify-between">
+        {/* Updated Wallet Balance Section */}
+        <div className="grid grid-cols-2 gap-8">
+          <div className="bg-white rounded-xl shadow-lg p-8">
+            <div className="flex items-center space-x-4 mb-6">
+              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                <Wallet className="text-white" size={24} />
+              </div>
               <div>
-                <p className="text-3xl font-bold text-primary">2.5 ETH</p>
-                <p className="text-gray-500 mt-2">≈ $4,523.75 USD</p>
+                <h2 className="text-xl font-bold text-gray-1">Main Wallet</h2>
+                <p className="text-gray-2">Connected to DigiTag</p>
               </div>
-              <button className="text-primary hover:text-deep-blue">
-                <RefreshCw size={24} />
-              </button>
             </div>
-            <div className="flex gap-4 mt-6">
-              <button className="btn-primary flex items-center">
-                <Send size={20} className="mr-2" />
-                Send
-              </button>
-              <button className="btn-primary flex items-center">
-                <Download size={20} className="mr-2" />
-                Receive
-              </button>
-            </div>
-          </div>
 
-          <div className="bg-gray-50 rounded-lg p-6">
-            <h2 className="text-xl font-semibold mb-4">Recent Transactions</h2>
             <div className="space-y-4">
-              <div className="flex justify-between items-center p-3 bg-white rounded-lg">
-                <div>
-                  <p className="font-medium">Purchase: Gold Watch NFT</p>
-                  <p className="text-sm text-gray-500">2 hours ago</p>
-                </div>
-                <span className="text-red-500 font-medium">-0.5 ETH</span>
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <p className="text-sm text-gray-2">Available Balance</p>
+                <p className="text-2xl font-bold text-primary">2.45 ETH</p>
+                <p className="text-gray-2">≈ $9,281.93 CAD </p>
               </div>
-              <div className="flex justify-between items-center p-3 bg-white rounded-lg">
-                <div>
-                  <p className="font-medium">Sale: Designer Bag NFT</p>
-                  <p className="text-sm text-gray-500">5 hours ago</p>
-                </div>
-                <span className="text-green-500 font-medium">+0.8 ETH</span>
-              </div>
-              <div className="flex justify-between items-center p-3 bg-white rounded-lg">
-                <div>
-                  <p className="font-medium">Purchase: Diamond Ring NFT</p>
-                  <p className="text-sm text-gray-500">1 day ago</p>
-                </div>
-                <span className="text-red-500 font-medium">-1.2 ETH</span>
+
+              <div className="flex space-x-4">
+                <button className="flex-1 btn-primary py-2 flex items-center justify-center space-x-2">
+                  <ArrowLeftRight size={20} />
+                  <span>Send</span>
+                </button>
+                <button className="flex-1 btn-primary py-2 flex items-center justify-center space-x-2">
+                  <CreditCard size={20} />
+                  <span>Receive</span>
+                </button>
               </div>
             </div>
           </div>
 
-          <div className="md:col-span-2 bg-gray-50 rounded-lg p-6">
-            <h2 className="text-xl font-semibold mb-4">Your NFT Collection</h2>
-            <div className="grid grid-cols-3 gap-4">
-              {[1, 2, 3].map((item) => (
-                <div key={item} className="bg-white rounded-lg p-4 shadow-sm">
-                  <img
-                    src={`https://images.unsplash.com/photo-${item === 1 ? '1548036328-c9fa89d128fa' : item === 2 ? '1523275335684-37898b6baf30' : '1526045431048-f857369baa09'}?auto=format&fit=crop&q=80&w=400`}
-                    alt={`NFT ${item}`}
-                    className="w-full h-32 object-cover rounded-lg mb-2"
-                  />
-                  <p className="font-medium">NFT #{item}</p>
-                  <p className="text-sm text-gray-500">Owned since 2025</p>
+          {/* Recent Transactions Section */}
+          <div className="bg-white rounded-xl shadow-lg p-8">
+            <h2 className="text-xl font-bold text-gray-1 mb-6 flex items-center space-x-2">
+              <History size={24} />
+              <span>Recent Transactions</span>
+            </h2>
+            <div className="space-y-4">
+              {[
+                { type: 'Received', amount: '0.5 ETH', date: '2025-01-10', status: 'Completed' },
+                { type: 'Sent', amount: '1.2 ETH', date: '2024-02-11', status: 'Completed' },
+                { type: 'Received', amount: '0.3 ETH', date: '2023-03-12', status: 'Completed' },
+              ].map((tx, index) => (
+                <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                  <div>
+                    <p className="font-medium text-gray-1">{tx.type}</p>
+                    <p className="text-sm text-gray-2">{tx.date}</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-medium text-primary">{tx.amount}</p>
+                    <p className="text-sm text-green-500">{tx.status}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </div>
+
+        {/* NFT Collection Section */}
+        <div className="md:col-span-2 bg-gray-50 rounded-lg p-6 mt-8">
+          <h2 className="text-xl font-semibold mb-4">Your NFT Collection</h2>
+          <div className="grid grid-cols-3 gap-4">
+            {[img1, img2, img3].map((image, index) => (
+              <div key={index} className="bg-white rounded-lg p-4 shadow-sm">
+                <img
+                  src={image}
+                  alt={`NFT ${index + 1}`}
+                  className="w-full h-32 object-cover rounded-lg mb-2"
+                />
+                <p className="font-medium">NFT #{index + 1}</p>
+                <p className="text-sm text-gray-500">Owned since 2025</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </div>
   );

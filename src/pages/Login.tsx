@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Mail, Lock, Wallet } from 'lucide-react';
+import { Mail, Lock } from 'lucide-react';
+import imgg from '../../assets/logo.webp';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -13,20 +14,18 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex">  
       {/* Left side - Logo */}
       <div className="w-1/2 bg-[#0466C8] flex items-center justify-center">
         <div className="text-white text-center">
-          <Wallet size={64} className="mx-auto mb-4" />
-          <h1 className="text-4xl font-bold">DigiTag</h1>
-          <p className="mt-2">Decentralized Marketplace for Secure & Authentic Transactions</p>
+          <img src={imgg} alt="DigiTag Logo" className="w-70 mx-auto mb-4" />
         </div>
       </div>
 
       {/* Right side - Login Form */}
       <div className="w-1/2 flex items-center justify-center bg-white">
         <div className="w-96">
-          <h2 className="text-2xl font-bold text-center mb-8">MEMBER LOGIN</h2>
+          <h2 className="text-2xl font-bold text-center mb-8">Member Login</h2>
           <form onSubmit={handleLogin} className="space-y-6">
             <div className="relative">
               <Mail className="absolute left-3 top-3 text-gray-400" size={20} />

@@ -1,18 +1,17 @@
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import img1 from '../../assets/bags/pink1.png';
+import img2 from '../../assets/bags/pink2.png'; 
+import img3 from '../../assets/bags/pink3.png'; 
 
 const mockProduct = {
   id: '1',
-  name: 'Luxury Leather Tote Bag',
+  name: 'ChicCarry Leather Tote',
   description: 'Handcrafted premium leather tote bag with gold-plated hardware and signature stitching. Perfect for both casual and formal occasions.',
   price: '0.5 ETH',
-  colors: ['#8B4513', '#000000', '#F5F5DC'],
-  images: [
-    'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&q=80&w=800',
-    'https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&q=80&w=800',
-    'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&q=80&w=800'
-  ]
+  colors: ['#FF91A4', '#000000', '#E76F00'],
+  images: [img1, img2, img3]
 };
 
 function ProductDetails() {
@@ -80,7 +79,7 @@ function ProductDetails() {
             <div className="mb-8">
               <h2 className="text-lg font-semibold mb-2">Price</h2>
               <p className="text-3xl font-bold text-primary">{mockProduct.price}</p>
-              <p className="text-gray-500">≈ $905.75 USD</p>
+              <p className="text-gray-500">≈ $1,892.93 CAD</p>
             </div>
 
             <button onClick={() => navigate('/purchase')} className="w-full py-3 text-lg font-medium bg-primary text-white rounded-lg hover:bg-primary-dark">
