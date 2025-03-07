@@ -27,10 +27,10 @@ DigiTag integrates a React-based frontend with blockchain technology, ensuring s
 ICP offers a decentralized, scalable, and cost-effective solution for Web3 applications. By eliminating gas fees, it allows cost-efficient transactions. ICP’s decentralized hosting ensures tamper-proof transactions, and its scalability makes it ideal for the growing luxury resale market.
 
 ## Team Members
-- **Abrar Ahmad**: [LinkedIn](https://linkedin.com/in/abrar-ahmad-36b949271)
-- **Rohan Saha**: [LinkedIn](https://linkedin.com/in/rohansaha27)
-- **Krithika Kannan**: [LinkedIn](https://linkedin.com/in/krithikakannan06)
 - **Garv Gupta**: [LinkedIn](https://www.linkedin.com/in/garv1908/)
+- **Krithika Kannan**: [LinkedIn](https://linkedin.com/in/krithikakannan06)
+- **Rohan Saha**: [LinkedIn](https://linkedin.com/in/rohansaha27)
+- **Abrar Ahmad**: [LinkedIn](https://linkedin.com/in/abrar-ahmad-36b949271)
 
 ## Demo
 Check out our [YouTube demo](https://youtu.be/ybWR_AV5Oxg) to see DigiTag in action.
