@@ -1,6 +1,7 @@
 # DigiTag - Winner @ Hack Canada 2025 for the ICP prize track
 
 Check out our (silly!) [YouTube demo](https://youtu.be/ybWR_AV5Oxg) to see DigiTag in action.
+
 Explore more about DigiTag on [DoraHacks](https://dorahacks.io/buidl/23016).
 
 DigiTag is a blockchain-powered platform designed to promote safe and authentic buying and selling of luxury products, such as Chanel handbags, over the internet. By leveraging the Internet Computer Protocol (ICP), DigiTag ensures secure, gasless NFT-based ownership transfers through digital wallets. Our mission is to provide a safe, authentic, and personalized buying experience while combating counterfeit goods in the luxury resale market.
